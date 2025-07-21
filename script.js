@@ -89,6 +89,7 @@ const handleAddTask = (text, id, done) => {
   const newTask = createTask(input.value, newId, false);
   taskList.appendChild(newTask);
   input.value = "";
+  input.focus();
 };
 
 // Tecla Enter para adicionar tarefa
