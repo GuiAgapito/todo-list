@@ -42,11 +42,16 @@ body {
 }
 
 .container {
-  width: 100%;
-  max-width: 1200px;
+  width: 100%;  
+  max-width: 1200px;  
+  position: fixed;
+  top: 2rem;  
+}
+
+.container > section {    
   background-color: var(--container-bg);
   border-radius: 8px;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: var(--shadow);
 }
 
