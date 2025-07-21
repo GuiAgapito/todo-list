@@ -1,2 +1,2 @@
 # todo-list
-Apenas para fixar meus conhecimentos com js
+Um projeto simples para exercitar coisas básicas do js

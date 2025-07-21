@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {  
+  --bg-color: #121212; 
+  --container-bg: #181818;
+  --sidebar-bg: #000000; 
+  --text-color: #ffffff; 
+  --text-secondary: #b3b3b3; 
+  --text-muted: #535353; 
+  
+  --primary: #1db954; 
+  --primary-hover: #1ed760; 
+  --primary-light: rgba(30, 215, 96, 0.2);
+  --accent-border: #1db954; 
+    
+  --danger: #ff4d4d; 
+  --danger-hover: rgba(255, 77, 77, 0.1);
+    
+  --hover-bg: #282828; 
+  --active-bg: #333333;
+  --input-bg: #2a2a2a; 
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --done-opacity: 0.6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--sidebar-bg);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: var(--container-bg);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+h4 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid var(--text-muted);
+  padding-bottom: 0.5rem;
+}
+
+/* Estilos para a seção de adicionar itens */
+.container-add-item {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#new-item {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--text-muted);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+#new-item:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: var(--text-color); 
+  border: none;
+  border-radius: 30px; 
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Estilos para a lista de tarefas */
+#task-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estilos para cada item de tarefa */
+#task-list > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;  
+  background-color: var(--input-bg);
+  border-radius: 4px;
+  border-left: 4px solid var(--primary);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#task-list > div:hover {
+  background-color: var(--hover-bg);
+}
+
+#task-list > div p {
+  flex: 1;
+  width: 100%;
+  margin-right: 1rem;
+  color: var(--text-color);
+}
+
+/* Estilo para tarefa concluída */
+#task-list > div.done {
+  opacity: var(--done-opacity);
+  border-left-color: var(--text-muted);
+}
+
+#task-list > div.done p {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+/* Estilo para o botão de deletar */
+#task-list > div button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  color: var(--danger);
+  font-size: 1rem;
+  opacity: 0.7;
+  transition: all 0.3s;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+#task-list > div button:hover {
+  opacity: 1;
+  background-color: var(--danger-hover);
+  transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+    background-color: var(--container-bg);
+  }
+  
+  .container {
+    padding: 1.5rem;
+    box-shadow: none;
+  }
+  
+  .container-add-item {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+  }
+}
